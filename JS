@@ -1,0 +1,63 @@
+let listaMaterias = [];
+
+let botaoAdd = document.getElementById("botaoAdd");
+let botaoRmv = document.getElementById("botaoRmv");
+let botaoResultado = document.getElementById("botaoResultado");
+let botaoLimparResultado = document.getElementById("botaoLimparResultado");
+
+botaoAdd.addEventListener("click", adicionar);
+botaoRmv.addEventListener("click", remover);
+botaoResultado.addEventListener("click", resultado);
+botaoLimparResultado.addEventListener("click", limparResultado);
+
+function adicionar(){
+  let lista = document.getElementById("listaMaterias");
+  let materia = document.getElementById("materia").value;
+  let dificuldade = +(document.getElementById("dificuldade").value);
+  let item = document.createElement("li");
+  let obj = {nome: materia.trim().toLowerCase(), dificuldade: dificuldade};
+  listaMaterias.push(obj);
+  
+  let estrelas = "";
+
+  for (let i = 1; i <= dificuldade; i++) {
+      estrelas += "⭐";
+  }
+  for (let i = dificuldade; i < 5; i++) {
+    estrelas += "☆";
+  }
+  
+  item.textContent = materia.trim().toLowerCase() + " " + estrelas;
+  lista.appendChild(item);
+}
+
+function remover(){
+  let lista = document.getElementById("listaMaterias");
+  if (lista.lastElementChild) {
+    lista.lastElementChild.remove();
+  }
+  listaMaterias.pop();
+}
+
+function resultado(){
+  let resultado = document.getElementById("resultado");
+  let horas = +(document.getElementById("horas").value);
+  let minutos = horas * 60;
+  let somaDificuldades = 0;
+  
+  for(let i of listaMaterias){
+    somaDificuldades += i.dificuldade; 
+  }
+  
+  for(let mat of listaMaterias){
+    let item = document.createElement("li");
+    let tempo = mat.dificuldade / somaDificuldades * minutos;
+    item.textContent = mat.nome + " " + Math.floor(tempo/60) + "h " + Math.floor(tempo%60) + "min";
+    resultado.appendChild(item);
+  }
+}
+
+function limparResultado(){
+  let resultado = document.getElementById("resultado");
+  resultado.innerHTML = "";
+}
