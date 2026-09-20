@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criador de Cronogramas</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>📚 Criador de Cronogramas</h1>
+
+    <div id="coleta">
+
+      <h2>Adicionar Matéria</h2>
+
+      <input type="text" id="materia" placeholder="Digite a matéria">
+
+      <select id="dificuldade">
+          <option value="1">⭐ Muito Fácil</option>
+          <option value="2">⭐⭐ Fácil</option>
+          <option value="3">⭐⭐⭐ Média</option>
+          <option value="4">⭐⭐⭐⭐ Difícil</option>
+          <option value="5">⭐⭐⭐⭐⭐ Muito Difícil</option>
+      </select>
+
+      <button id="botaoAdd">Adicionar</button>
+
+    </div>
+
+    <div id="boxMaterias">
+
+      <h2>Matérias Cadastradas</h2>
+
+      <ul id="listaMaterias"></ul>
+
+      <button id="botaoRmv">Remover Última</button>
+
+    </div>
+
+    <div id="boxHoras">
+
+      <h2>Horas Disponíveis</h2>
+
+      <input
+      type="number"
+      id="horas"
+      min="1"
+      max="24"
+      step="0.5"
+      placeholder="Ex: 3.5">
+
+      <button id="botaoResultado">Gerar Cronograma</button>
+
+    </div>
+
+    <div id="boxResultado">
+
+      <h2>Cronograma</h2>
+      <ul id="resultado"></ul>
+      <button id="botaoLimparResultado">Limpar Cronograma</button>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
