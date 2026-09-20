@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #0f172a);
+    color: #0f172a;
+    padding: 30px;
+}
+
+.container{
+    width: 600px;
+    background: #1e293b;
+    border: 1px solid #38bdf8;
+    border-radius: 22px;
+    padding: 30px;
+}
+
+h1{
+    text-align: center;
+    color: #f8fafc;
+    margin-bottom: 25px;
+}
+
+h2{
+    color: #f8fafc;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+#listaMaterias, #resultado{
+  color: white;
+}
+
+#coleta, #boxMaterias, #boxHoras, #boxResultado{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #2f5d73;
+}
+
+input, select{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1px solid #4d7d93;
+    background: #0d1f2a;
+    color: white;
+    font-size: 16px;
+}
+
+input:focus, select:focus{
+    outline: none;
+    border-color: #7ee7c5;
+}
+
+button{
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(90deg, blue, #4bb3fd);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+button:hover{
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+#botaoRmv{
+    background: linear-gradient(90deg, #ff7a7a, #ff5252);
+    color: white;
+}
+
+#botaoLimparResultado{
+    background: linear-gradient(90deg, #ffb347, #ff7b00);
+    color: white;
+}
+
+#botaoLimparResultado:hover{
+    filter: brightness(1.1);
+}
+
+ul{
+    list-style: none;
+    margin-top: 15px;
+}
+
+li{
+    background: #0d1f2a;
+    border-left: 5px solid #7ee7c5;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+li:hover{
+    transform: translateX(5px);
+}
+
+#boxResultado{
+    background: #0d1f2a;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#resultado li{
+    border-left: 5px solid #4bb3fd;
+}
+
+@media(max-width: 650px){
+
+    body{
+        padding: 15px;
+    }
+
+    .container{
+        width: 100%;
+        padding: 20px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+    input, select, button{
+        font-size: 15px;
+    }
+
+}
